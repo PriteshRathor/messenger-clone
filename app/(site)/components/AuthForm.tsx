@@ -55,7 +55,7 @@ const AuthForm = () => {
 
         if (variant === "REGISTER") {
             // REGISTER API
-            axios.post(`${process.env.LIVE_URL}/api/register`, data).catch((error) => {
+            axios.post(`/api/register`, data).catch((error) => {
                 toast.error(error.response.data)
             })
                 .then(() => signIn('credentials', {

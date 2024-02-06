@@ -57,7 +57,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
 
-        axios.post(`${process.env.LIVE_URL}/api/settings`, data)
+        axios.post(`/api/settings`, data)
             .then(() => {
                 router.refresh();
                 onClose();

@@ -20,7 +20,7 @@ const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
     const { conversationId } = useConversation();
 
     useEffect(() => {
-        axios.post(`${process.env.LIVE_URL}/api/conversations/${conversationId}/seen`);
+        axios.post(`/api/conversations/${conversationId}/seen`);
     }, [conversationId]);
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
         bottomRef?.current?.scrollIntoView()
 
         const messagehandler = (message: FullMessageType) => {
-            axios.post(`${process.env.LIVE_URL}/api/conversations/${conversationId}/seen`);
+            axios.post(`/api/conversations/${conversationId}/seen`);
 
             console.log("~ message: ---------------", message)
             setMessages((current: FullMessageType) => {

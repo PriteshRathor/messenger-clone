@@ -50,7 +50,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
-    axios.post(`${process.env.LIVE_URL}/api/conversations`, {
+    axios.post(`/api/conversations`, {
       ...data,
       isGroup: true
     })
